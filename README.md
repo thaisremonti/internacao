@@ -1,0 +1,2 @@
+# internacao
+Fila de Internação
