@@ -1,28 +1,29 @@
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { RouterModule } from '@angular/router';
-import { LogarComponent } from './components/logar.component';
-import { LoginComponent } from './components/login/login.component';
-import { LoginService } from './services';
+import { SharedModule } from '../../shared/shared.module';
 
+import { CadastrarPjComponent, CadastroPjComponent } from './components';
 
 @NgModule({
   declarations: [
-    LoginComponent,
-    LogarComponent
+    CadastrarPjComponent,
+    CadastroPjComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatInputModule,
@@ -31,10 +32,7 @@ import { LoginService } from './services';
     MatTooltipModule,
     MatIconModule,
     MatSnackBarModule,
-    FlexLayoutModule
-  ],
-  providers: [
-    LoginService
+    SharedModule
   ]
 })
-export class LoginModule { }
+export class CadastroPjModule { }

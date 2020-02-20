@@ -1,10 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
-import { TestBed, async } from '@angular/core/testing';
-
-// beforeEach(() => {
-//   TestBed.configureTestingModule({ declarations: [ ], imports: [ RouterTestingModule ] })
-// })
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +7,20 @@ import { TestBed, async } from '@angular/core/testing';
   styleUrls: ['./app.component.sass']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'internacao';
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+  }
+
+  sair() {
+  	delete localStorage['token'];
+  	this.router.navigate(['/']);
+  }
+
+  autenticado(): boolean {
+    return localStorage['token'];
+  }
+
 }

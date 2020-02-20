@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { LoginModule, LoginRoutingModule } from './autenticacao';
-import { Routes, RouterModule, Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
+import { LoginModule, LoginRoutingModule, CadastroPjModule, CadastroPjRoutingModule } from './autenticacao';
+
 
 @NgModule({
   declarations: [
@@ -21,9 +22,10 @@ import { RouterTestingModule } from '@angular/router/testing';
     MatButtonModule,
     LoginModule,
     LoginRoutingModule,
-    RouterTestingModule,
-    Router,
-    RouterModule,
+    MatIconModule,
+    MatToolbarModule,
+    CadastroPjModule,
+    CadastroPjRoutingModule,
 
     AppRoutingModule
   ],
